@@ -9,7 +9,7 @@ import { BottomSheet } from "./BottomSheet";
 
 const chip = (active: boolean) =>
   `min-h-11 rounded-xl border px-3 text-sm font-semibold transition active:scale-95 ${
-    active ? "border-blue-600 bg-blue-600 text-white" : "border-slate-200 bg-white text-slate-700"
+    active ? "border-teal-600 bg-teal-600 text-white" : "border-slate-200 bg-white text-slate-700"
   }`;
 
 export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose: () => void }) {
@@ -43,7 +43,7 @@ export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose
           value={d.title}
           onChange={(e) => set({ title: e.target.value })}
           placeholder="Quel est le problème ou l'action ?"
-          className="w-full rounded-xl border border-slate-300 px-4 py-3 text-base outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+          className="w-full rounded-xl border border-slate-300 px-4 py-3 text-base outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100"
         />
 
         <fieldset>
@@ -83,7 +83,7 @@ export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose
             value={d.owner}
             onChange={(e) => set({ owner: e.target.value })}
             placeholder="Prénom"
-            className="w-full rounded-xl border border-slate-300 px-4 py-3 text-base outline-none focus:border-blue-600"
+            className="w-full rounded-xl border border-slate-300 px-4 py-3 text-base outline-none focus:border-teal-600"
           />
           <datalist id="owners">
             {owners.map((o) => (
@@ -155,7 +155,7 @@ export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose
           <button
             type="submit"
             disabled={!d.title.trim()}
-            className="h-14 flex-1 rounded-2xl bg-blue-600 text-base font-bold text-white shadow-lg shadow-blue-600/20 active:bg-blue-700 disabled:opacity-40"
+            className="h-14 flex-1 rounded-2xl bg-teal-600 text-base font-bold text-white shadow-lg shadow-teal-600/20 active:bg-teal-700 disabled:opacity-40"
           >
             Enregistrer
           </button>

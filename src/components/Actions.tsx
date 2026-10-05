@@ -53,7 +53,7 @@ export function Actions({ openCard }: { openCard: (d: CardDraft) => void }) {
               key={o || "all"}
               onClick={() => setOwner(o)}
               className={`min-h-9 shrink-0 rounded-full border px-3 text-sm font-semibold ${
-                owner === o ? "border-blue-600 bg-blue-50 text-blue-700" : "border-slate-200 bg-white text-slate-600"
+                owner === o ? "border-teal-600 bg-teal-50 text-teal-700" : "border-slate-200 bg-white text-slate-600"
               }`}
             >
               {o || "Tout le monde"}

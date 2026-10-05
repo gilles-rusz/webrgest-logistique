@@ -1,6 +1,7 @@
 "use client";
 
 import { ChartColumn, LayoutGrid, ListChecks, Menu, Plus, Timer } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { isLate } from "@/lib/dates";
 import { useStore } from "@/lib/store";
@@ -32,10 +33,17 @@ export function App() {
 
   return (
     <div className="min-h-dvh bg-slate-100 pb-[calc(5.5rem+env(safe-area-inset-bottom))] text-slate-900">
-      <header className="sticky top-0 z-20 flex h-14 items-center justify-between bg-slate-900 px-4 text-white">
-        <div className="min-w-0">
-          <p className="text-base font-black leading-none">Lean Terrain</p>
-          <p className="truncate text-xs text-slate-400">{store.team || "Mon équipe"}</p>
+      <header className="sticky top-0 z-20 flex h-14 items-center justify-between bg-[#141729] px-4 text-white">
+        <div className="flex min-w-0 items-center gap-2.5">
+          <span className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-xl border border-teal-300/20 bg-[#141729] shadow-[0_0_20px_rgba(45,212,191,0.15)]">
+            <Image src="/globe.png" alt="" width={36} height={36} priority />
+          </span>
+          <div className="min-w-0">
+            <p className="truncate text-[15px] font-black leading-tight tracking-wide">
+              WEB RG EST <span className="font-semibold italic tracking-normal text-[#E8B84B]">/ Logistique</span>
+            </p>
+            <p className="truncate text-xs text-slate-400">{store.team || "Mon équipe"}</p>
+          </div>
         </div>
         <button onClick={() => setMenu(true)} aria-label="Réglages" className="grid h-10 w-10 place-items-center rounded-full active:bg-white/10">
           <Menu size={22} />
@@ -53,7 +61,7 @@ export function App() {
         <button
           onClick={() => setDraft(emptyDraft())}
           aria-label="Nouvelle carte"
-          className="fixed bottom-[calc(5.5rem+env(safe-area-inset-bottom))] right-4 z-30 grid h-16 w-16 place-items-center rounded-full bg-blue-600 text-white shadow-xl shadow-blue-600/30 active:scale-90"
+          className="fixed bottom-[calc(5.5rem+env(safe-area-inset-bottom))] right-4 z-30 grid h-16 w-16 place-items-center rounded-full bg-teal-600 text-white shadow-xl shadow-teal-600/30 active:scale-90"
         >
           <Plus size={32} strokeWidth={2.5} />
         </button>
@@ -65,7 +73,7 @@ export function App() {
             <button
               key={id}
               onClick={() => setTab(id)}
-              className={`relative flex h-16 flex-col items-center justify-center gap-1 text-xs font-bold ${tab === id ? "text-blue-600" : "text-slate-500"}`}
+              className={`relative flex h-16 flex-col items-center justify-center gap-1 text-xs font-bold ${tab === id ? "text-teal-600" : "text-slate-500"}`}
             >
               <Icon size={24} strokeWidth={tab === id ? 2.5 : 2} />
               {label}
@@ -87,7 +95,7 @@ export function App() {
           id="team"
           value={store.team}
           onChange={(e) => store.setTeam(e.target.value)}
-          className="mb-5 w-full rounded-xl border border-slate-300 px-4 py-3 text-base outline-none focus:border-blue-600"
+          className="mb-5 w-full rounded-xl border border-slate-300 px-4 py-3 text-base outline-none focus:border-teal-600"
         />
         <div className="space-y-2">
           <button

@@ -1,4 +1,4 @@
-# Lean Terrain
+# Web RG Est / Logistique
 
 Prototype d'application de Lean Management pour les équipes terrain (atelier, entrepôt), pensé mobile first.
 

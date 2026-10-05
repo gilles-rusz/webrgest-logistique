@@ -14,7 +14,7 @@ export function CardItem({ card, onOpen, trailing, lifted }: { card: Card; onOpe
   return (
     <div
       className={`flex items-center gap-3 rounded-2xl border bg-white p-3 ${
-        lifted ? "rotate-1 border-blue-300 shadow-xl" : "border-slate-200 shadow-sm"
+        lifted ? "rotate-1 border-teal-300 shadow-xl" : "border-slate-200 shadow-sm"
       } ${late ? "border-l-4 border-l-red-500" : ""}`}
     >
       <button

@@ -55,11 +55,11 @@ export function Ritual({ openCard }: { openCard: (d: CardDraft) => void }) {
   if (phase === "idle") {
     return (
       <div className="space-y-4 py-4">
-        <div className="rounded-3xl bg-gradient-to-br from-blue-600 to-blue-800 p-6 text-white shadow-lg">
-          <p className="text-sm font-semibold uppercase tracking-wide text-blue-100">Rituel de début de poste</p>
+        <div className="rounded-3xl bg-gradient-to-br from-teal-600 to-teal-800 p-6 text-white shadow-lg">
+          <p className="text-sm font-semibold uppercase tracking-wide text-teal-100">Rituel de début de poste</p>
           <h2 className="mt-1 text-2xl font-bold leading-tight">5 minutes, 5 indicateurs</h2>
-          <p className="mt-2 text-blue-100">Un clic par indicateur, puis le point sur les actions en retard.</p>
-          <button onClick={start} className="mt-5 flex h-16 w-full items-center justify-center gap-3 rounded-2xl bg-white text-lg font-bold text-blue-700 shadow active:scale-[0.98]">
+          <p className="mt-2 text-teal-100">Un clic par indicateur, puis le point sur les actions en retard.</p>
+          <button onClick={start} className="mt-5 flex h-16 w-full items-center justify-center gap-3 rounded-2xl bg-white text-lg font-bold text-teal-700 shadow active:scale-[0.98]">
             <Play size={24} fill="currentColor" />
             {todayRecord ? "Refaire le rituel du jour" : "Démarrer le rituel"}
           </button>
@@ -85,7 +85,7 @@ export function Ritual({ openCard }: { openCard: (d: CardDraft) => void }) {
           <span className="text-sm font-semibold text-slate-500">{filled}/5 renseignés</span>
         </div>
         <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-200">
-          <div className={`h-full transition-all ${over ? "bg-red-500" : "bg-blue-600"}`} style={{ width: `${Math.min(100, (elapsed / TARGET) * 100)}%` }} />
+          <div className={`h-full transition-all ${over ? "bg-red-500" : "bg-teal-600"}`} style={{ width: `${Math.min(100, (elapsed / TARGET) * 100)}%` }} />
         </div>
       </div>
 

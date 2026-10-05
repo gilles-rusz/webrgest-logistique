@@ -35,8 +35,8 @@ function ColumnTab({ col, count, active, dragging, onClick }: { col: Column; cou
       ref={setNodeRef}
       onClick={onClick}
       className={`flex min-h-12 flex-1 items-center justify-center gap-2 rounded-xl text-sm font-bold transition ${
-        isOver ? "scale-105 bg-blue-600 text-white" : active ? "bg-white text-slate-900 shadow" : "text-slate-500"
-      } ${dragging && !isOver ? "outline-2 outline-dashed outline-blue-300" : ""}`}
+        isOver ? "scale-105 bg-teal-600 text-white" : active ? "bg-white text-slate-900 shadow" : "text-slate-500"
+      } ${dragging && !isOver ? "outline-2 outline-dashed outline-teal-300" : ""}`}
     >
       {label}
       <span className={`rounded-full px-2 py-0.5 text-xs ${isOver ? "bg-white/25" : "bg-slate-200 text-slate-700"}`}>{count}</span>
@@ -48,7 +48,7 @@ function ColumnZone({ col, cards, onOpen }: { col: Column; cards: Card[]; onOpen
   const { setNodeRef, isOver } = useDroppable({ id: `col:${col}` });
   const label = COLUMNS.find((c) => c.id === col)!.label;
   return (
-    <section ref={setNodeRef} className={`flex min-h-[60dvh] flex-col gap-2 rounded-2xl p-2 transition ${isOver ? "bg-blue-100" : "bg-slate-200/60"}`}>
+    <section ref={setNodeRef} className={`flex min-h-[60dvh] flex-col gap-2 rounded-2xl p-2 transition ${isOver ? "bg-teal-100" : "bg-slate-200/60"}`}>
       <h2 className="hidden items-center justify-between px-2 pt-1 text-sm font-bold text-slate-600 md:flex">
         {label}
         <span className="rounded-full bg-white px-2 py-0.5 text-xs">{cards.length}</span>

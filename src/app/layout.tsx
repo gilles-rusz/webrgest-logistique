@@ -5,16 +5,16 @@ import "./globals.css";
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Lean Terrain",
+  title: "Web RG Est / Logistique",
   description: "Tableau visuel, rituel de 5 minutes et KPI automatiques pour les équipes terrain.",
-  appleWebApp: { capable: true, title: "Lean Terrain", statusBarStyle: "black-translucent" },
+  appleWebApp: { capable: true, title: "Web RG Est / Logistique", statusBarStyle: "black-translucent" },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#0f172a",
+  themeColor: "#141729",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
