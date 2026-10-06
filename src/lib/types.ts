@@ -29,9 +29,9 @@ export const COLUMNS: { id: Column; label: string }[] = [
 ];
 
 export const HEALTH: Record<Health, { label: string; dot: string; soft: string }> = {
-  ok: { label: "OK", dot: "bg-emerald-500", soft: "bg-emerald-50 text-emerald-700 border-emerald-200" },
-  warn: { label: "À surveiller", dot: "bg-amber-400", soft: "bg-amber-50 text-amber-800 border-amber-200" },
-  ko: { label: "Problème", dot: "bg-red-500", soft: "bg-red-50 text-red-700 border-red-200" },
+  ok: { label: "Sous contrôle", dot: "bg-emerald-500", soft: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+  warn: { label: "Irritant", dot: "bg-amber-400", soft: "bg-amber-50 text-amber-800 border-amber-200" },
+  ko: { label: "Bloquant", dot: "bg-red-500", soft: "bg-red-50 text-red-700 border-red-200" },
 };
 
 export const HEALTH_ORDER: Health[] = ["ok", "warn", "ko"];
