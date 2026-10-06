@@ -47,14 +47,15 @@ export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose
         />
 
         <fieldset>
-          <legend className="mb-2 text-sm font-semibold text-slate-500">Statut</legend>
+          <legend className="text-sm font-semibold text-slate-700">Statut</legend>
+          <p className="mb-2 text-xs text-slate-500">La gravité du point : vert sous contrôle, orange irritant, rouge bloquant.</p>
           <div className="grid grid-cols-3 gap-2">
             {HEALTH_ORDER.map((h) => (
               <button
                 type="button"
                 key={h}
                 onClick={() => set({ health: h })}
-                className={`flex min-h-12 items-center justify-center gap-2 rounded-xl border text-sm font-semibold ${
+                className={`flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-1 text-sm font-semibold leading-tight ${
                   d.health === h ? HEALTH[h].soft + " ring-2 ring-offset-1 ring-current" : "border-slate-200 text-slate-600"
                 }`}
               >
@@ -66,7 +67,8 @@ export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose
         </fieldset>
 
         <fieldset>
-          <legend className="mb-2 text-sm font-semibold text-slate-500">Colonne</legend>
+          <legend className="text-sm font-semibold text-slate-700">Colonne</legend>
+          <p className="mb-2 text-xs text-slate-500">L&apos;avancement de l&apos;action.</p>
           <div className="grid grid-cols-3 gap-2">
             {COLUMNS.map((c) => (
               <button type="button" key={c.id} onClick={() => set({ column: c.id })} className={chip(d.column === c.id)}>
@@ -77,7 +79,8 @@ export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose
         </fieldset>
 
         <fieldset>
-          <legend className="mb-2 text-sm font-semibold text-slate-500">Pilote</legend>
+          <legend className="text-sm font-semibold text-slate-700">Pilote</legend>
+          <p className="mb-2 text-xs text-slate-500">La personne qui porte l&apos;action.</p>
           <input
             list="owners"
             value={d.owner}
@@ -102,7 +105,8 @@ export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose
         </fieldset>
 
         <fieldset>
-          <legend className="mb-2 text-sm font-semibold text-slate-500">Échéance</legend>
+          <legend className="text-sm font-semibold text-slate-700">Échéance</legend>
+          <p className="mb-2 text-xs text-slate-500">Passé cette date, la carte ressort en retard pendant le rituel.</p>
           <div className="flex flex-wrap gap-2">
             {quickDates.map((q) => (
               <button type="button" key={q.label} onClick={() => set({ due: d.due === q.value ? null : q.value })} className={chip(d.due === q.value)}>
@@ -120,17 +124,18 @@ export function CardSheet({ draft, onClose }: { draft: CardDraft | null; onClose
         </fieldset>
 
         <fieldset>
-          <legend className="mb-2 text-sm font-semibold text-slate-500">Indicateur SQCDP</legend>
-          <div className="grid grid-cols-5 gap-2">
+          <legend className="text-sm font-semibold text-slate-700">Indicateur SQCDP</legend>
+          <p className="mb-2 text-xs text-slate-500">Le thème touché par le problème. Sert à calculer les KPI.</p>
+          <div className="flex flex-wrap gap-2">
             {LETTERS.map((l) => (
               <button
                 type="button"
                 key={l.id}
-                title={l.label}
                 onClick={() => set({ letter: d.letter === l.id ? null : l.id })}
-                className={chip(d.letter === l.id) + " text-base"}
+                className={chip(d.letter === l.id) + " inline-flex items-center gap-1.5"}
               >
-                {l.id}
+                <span className="font-black">{l.id}</span>
+                {l.label}
               </button>
             ))}
           </div>
