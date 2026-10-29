@@ -7,6 +7,15 @@ const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Web RG Est / Logistique",
   description: "Tableau visuel, rituel de 5 minutes et KPI automatiques pour les équipes terrain.",
+  metadataBase: new URL("https://webrgest-logistique.vercel.app"),
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Web RG Est",
+    title: "Web RG Est / Logistique",
+    description: "Tableau visuel, rituel de 5 minutes et KPI automatiques pour les équipes terrain.",
+  },
+  twitter: { card: "summary_large_image" },
   appleWebApp: { capable: true, title: "Web RG Est / Logistique", statusBarStyle: "black-translucent" },
 };
 
